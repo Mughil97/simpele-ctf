@@ -1,31 +1,60 @@
-/* Dark Theme CSS */
-body.dark-theme {
-    background-color: #181818;
-    color: #eaeaea;
+/* Dark mode style (default) */
+body {
+    background-color: black;
+    color: black;
+    /* Hide text in dark mode */
 }
 
-body.dark-theme .form-control {
+/* Light mode style */
+body[data-theme="light"] {
+    background-color: white;
+    color: black;
+}
+
+/* Optional: Transition effect when switching themes */
+body,
+.content {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Just a simple style for the toggle button for better visibility */
+button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Speech bubble design */
+.speech-bubble {
+    position: relative;
     background-color: #333;
-    border-color: #444;
-    color: #eaeaea;
+    /* Dark background for the bubble */
+    color: white;
+    /* White text */
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: max-content;
+    /* Take as much width as content requires */
+    max-width: 200px;
+    /* Maximum width */
 }
 
-body.dark-theme .form-control::placeholder {
-    color: #888;
+/* Arrow pointing to the toggle button */
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    right: 55px;
+    /* Adjust based on where you want the arrow to point */
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
+    /* Dark arrow pointing upward */
 }
 
-body.dark-theme .form-control:read-only {
-    background-color: #444;
-    opacity: 0.7;
-}
-
-body.dark-theme .btn-danger {
-    background-color: #d43f00;
-    border-color: #c13700;
-}
-
-body.dark-theme .container {
-    background-color: #222;
-    border-radius: 5px;
-    padding: 20px;
+/* Hide dialog bubble in light mode */
+body[data-theme="light"] #fixMeDialog {
+    display: none;
 }

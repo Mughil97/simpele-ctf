@@ -1,47 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Darth's CTF</title>
+    <style>
+        body {
+            background-color: black;
+            color: black;
+        }
+    </style>
 </head>
 
-<body class="dark-theme">
-
+<body data-theme="dark">
     <div class="container mt-5">
         <div class="position-relative">
             <div class="position-absolute top-0 end-0">
-                <button id="theme-toggle" class="btn btn-link" , onclick="toggleTheme()">🌞</button>
+
+                <button id="themeToggle" class="btn btn-link">
+                    <img id="bulb" src="assets/light-bulb.svg" />
+                </button>
+                <div class="speech-bubble mt-3" id="fixMeDialog">
+                    Fix me!
+                </div>
             </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="content" hidden>
             <div class="col-12 col-md-8 col-lg-6 text-center">
                 <h1>Welcome to the challenge!</h1>
                 <div class="my-4">
-                    <input type="text" class="form-control" value="Your uneditable content" readonly>
+                    <input type="text" class="form-control" value="SkhXIFBISFBQIQ==" readonly>
                 </div>
                 <div class="my-2">
-                    <input type="text" class="form-control" placeholder="Enter something...">
+                    <input type="text" id="decryptedMessage" class="form-control" placeholder="Enter the secret!">
                 </div>
                 <div class="my-2">
-                    <button class="btn btn-danger">Red Button</button>
+                    <button id="checkMessage" class="btn btn-danger">Lets check if you are correct</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="winModal" tabindex="-1" aria-labelledby="winModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="winModalLabel">Congratulations!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        You've cracked the code! 🎉
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <script src="js/themeToggle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/dist/confetti.browser.min.js"></script>
+    <script src="js/themeToggle.js" defer></script>
 
 </body>
 
