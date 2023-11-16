@@ -1,17 +1,17 @@
-document.getElementById('themeToggle').addEventListener('click', function () {
-    let currentTheme = document.body.dataset.theme;
+// document.getElementById('themeToggle').addEventListener('click', function () {
+//     let currentTheme = document.body.dataset.theme;
 
-    // Toggle between light and dark theme
-    if (currentTheme === "dark") {
-        document.body.dataset.theme = "light";
-        document.querySelector('.content').toggleAttribute('hidden');
-        document.getElementById("bulb").src = "assets/light-bulb-on.svg";
-    } else {
-        document.body.dataset.theme = "dark";
-        document.querySelector('.content').toggleAttribute('hidden');
-        document.getElementById("bulb").src = "assets/light-bulb.svg";
-    }
-});
+//     // Toggle between light and dark theme
+//     if (currentTheme === "dark") {
+//         document.body.dataset.theme = "light";
+//         document.querySelector('.content').toggleAttribute('hidden');
+//         document.getElementById("bulb").src = "assets/light-bulb-on.svg";
+//     } else {
+//         document.body.dataset.theme = "dark";
+//         document.querySelector('.content').toggleAttribute('hidden');
+//         document.getElementById("bulb").src = "assets/light-bulb.svg";
+//     }
+// });
 
 document.getElementById('checkMessage').addEventListener('click', function () {
     const userInput = document.getElementById('decryptedMessage').value.toUpperCase();
